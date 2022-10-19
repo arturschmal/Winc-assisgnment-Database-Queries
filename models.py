@@ -28,6 +28,11 @@ class Product(BaseModel):
     seller = ForeignKeyField(User, backref='products')
     tags = ManyToManyField(Tag, backref='products')
 
+    class Meta:
+        indexes = (
+            (('name', 'price_per_unit', 'quantity', 'description', 'seller'), True),
+        )
+
 
 class Transaction(BaseModel):
     product = ForeignKeyField(Product)
