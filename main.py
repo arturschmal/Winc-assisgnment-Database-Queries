@@ -17,6 +17,7 @@ def search(term):
     users = (User.select()
             .where(User.name.contains(term.lower())))
 
+    # check of de queries resultaten opleveren en itereer daar vervolgens over
     if len(products) > 0:
         for product in products:
             print(product.name)
