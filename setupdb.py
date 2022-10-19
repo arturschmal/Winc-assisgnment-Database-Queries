@@ -11,7 +11,7 @@ def delete_database():
         os.remove(database_path)
 
 
-def setup_data(models):
+def populate_test_database(models):
 
     # open de database connectie
     models.db.connect()
@@ -146,4 +146,4 @@ def setup_data(models):
 
 if __name__ == "__main__":
     delete_database()
-    setup_data(models)
+    populate_test_database(models)
